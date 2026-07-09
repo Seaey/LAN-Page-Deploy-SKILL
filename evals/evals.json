@@ -1,0 +1,21 @@
+{
+  "skill_name": "lan-page-deploy",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "帮我把这个页面部署一下，想让同一个 Wi-Fi 下的手机也能打开。页面会用摄像头。",
+      "expected_output": "The agent should use the LAN deploy workflow, choose HTTPS because camera access is needed, check ports before launch, ask before killing occupied ports, and return an IP-based HTTPS URL."
+    },
+    {
+      "id": 2,
+      "prompt": "Please start /demo so another laptop on my local network can visit it. It does not use camera or microphone.",
+      "expected_output": "The agent should deploy the /demo route over LAN, prefer HTTP unless the project requires HTTPS, use the default frontend/backend ports when available, and report local plus LAN URLs."
+    },
+    {
+      "id": 3,
+      "prompt": "3001 好像被之前的服务占了。帮我重新部署这个页面。",
+      "expected_output": "The agent should inspect the listener on port 3001, show PID/command, ask before killing it, and only stop the exact process after confirmation."
+    }
+  ]
+}
+
